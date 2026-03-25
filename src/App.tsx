@@ -314,7 +314,7 @@ export default function App() {
         </div>
         
         <div className="text-center mb-16 relative z-10 mt-8">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-black mb-4">Balony na <span className="text-brand-pink-accent italic">każdą</span> okazję</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand-black mb-4">Balony na <span className="text-brand-pink-accent italic">każdą</span> okazję</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto px-4">Urodziny, wesela, chrzciny, eventy firmowe... Tworzymy dekoracje, które zapierają dech w piersiach!</p>
         </div>
 
