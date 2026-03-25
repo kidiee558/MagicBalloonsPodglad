@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-script: "Dancing Script", cursive;
+  
+  --color-brand-pink: #fdf2f8;
+  --color-brand-pink-dark: #fbcfe8;
+  --color-brand-pink-accent: #f472b6;
+  --color-brand-cream: #fffbf0;
+  --color-brand-cream-light: #fffdf8;
+  --color-brand-blue: #bde0fe;
+  --color-brand-black: #1f2937;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sweet details & animations */
+.polaroid {
+  background: #ffffff;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 0 15px 35px -5px rgba(244, 114, 182, 0.2), 0 8px 10px -6px rgba(244, 114, 182, 0.1);
+  border-radius: 4px;
+  border: 1px solid #fdf2f8;
+}
+
+.blob-shape {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 1.5rem;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-w: 100%;
+  gap: 1.5rem;
+  animation: scroll 35s linear infinite;
+}
+
+.marquee-content.reverse {
+  animation: scroll-reverse 35s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 1.5rem)); }
+}
+
+@keyframes scroll-reverse {
+  from { transform: translateX(calc(-100% - 1.5rem)); }
+  to { transform: translateX(0); }
+}
+
+/* Patterns */
+.bg-polka-dots {
+  background-image: radial-gradient(var(--color-brand-pink-dark) 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+
+.bg-stripes {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 251, 240, 0.4) 10px, rgba(255, 251, 240, 0.4) 20px);
+}
